@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil do Desenvolvedor - [Seu Nome]</title>
+    
+    <meta name="description" content="[Seu Nome], desenvolvedor web focado em resultados e otimização. Paixão por código limpo e performance, assim como no treino.">
+    <meta name="keywords" content="desenvolvedor, web, front-end, back-end, portfólio, [Seu Nome], bodybuilding, programador">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&family=Bebas+Neue&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../index.css">
+    <link rel="stylesheet" href="../estilizacao.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <a href="../index.html" class="logo">AmantesDoSuco</a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="../index.html#sobre">A Academia</a></li>
+                    <li><a href="../index.html#planos">Planos</a></li>
+                    <li><a href="../index.html#modalidades">Modalidades</a></li>
+                    <li><a href="../index.html#contato">Contato</a></li>
+                    <li>
+                        <div class="theme-switcher">
+                            <input type="checkbox" id="theme-toggle">
+                            <label for="theme-toggle" class="slider"></label>
+                        </div> 
+                    </li>
+                </ul>
+                <div class="nav-dropdown">
+                    <button class="dropdown-btn">Menu</button>
+                    <div class="dropdown-content">
+                        <a href="../index.html#sobre">A Academia</a>
+                        <a href="../index.html#planos">Planos</a>
+                        <a href="../index.html#modalidades">Modalidades</a>
+                        <a href="../index.html#contato">Contato</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="autor-section">
+            <div class="container autor-content">
+                <div class="autor-image-container">
+                    <img src="../img/bodybuilding.png" alt="Foto de perfil do desenvolvedor Rafael - Bodybuilder">
+                </div>
+
+                <div class="autor-info">
+                    <h2>Rafael Santos Oliveira</h2>
+                    <p class="subtitle">Engenheiro de Software | Bodybuilder | Focado em Resultados</p>
+
+                    <p>
+                        Assim como no treino, onde cada repetição conta para o resultado final, no desenvolvimento web, cada linha de código é um passo em direção à excelência. Com a mesma dedicação e disciplina que forjo meu corpo, construo soluções digitais robustas, eficientes e esteticamente impecáveis.
+                    </p>
+                    <p>
+                        Minha jornada é marcada pela busca incessante por otimização, performance e uma experiência de usuário sem falhas. Trago a mentalidade de "no pain, no gain" para cada projeto, garantindo que o seu site ou aplicação não apenas funcione, mas inspire e gere impacto.
+                    </p>
+
+                    <h3>Minhas Especialidades (Usadas nesse site)</h3>
+                    <div class="autor-skills">
+                        <div class="skills-grid">
+                            <div class="skill-item"><p>HTML Sem Limites</p></div>
+                            <div class="skill-item"><p>CSS Flexível e Adaptável</p></div>
+                            <div class="skill-item"><p>JavaScript Otimizado</p></div>
+                            <div class="skill-item"><p>UI/UX Intuitivo</p></div>
+                            <div class="skill-item"><p>Otimização de Performance</p></div>
+                            <div class="skill-item"><p>Padrões de Código Limpo</p></div>
+                        </div>
+                    </div>
+
+                    <h3>Conecte-se e Levante Projetos Comigo</h3>
+                    <div class="autor-links">
+                        <a href="https://github.com/rafaelsanoli" target="_blank" class="btn btn-primary">Meu GitHub</a>
+                        <a href="https://linkedin.com/in/rafaelsanoli" target="_blank" class="btn btn-secondary">Meu LinkedIn</a>
+                        <a href="mailto:rafaelsanoli@icloud.com" class="btn btn-secondary">Enviar Email Pro Monstro</a>
+                        </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2025 Rafael Santos Oliveira. Desenvolvido com paixão e disciplina de um bodybuilder profissional.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mesmo script de tema claro/escuro da página principal, adaptado para esta página
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+
+        function applySavedTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'light-mode') {
+                body.classList.add('light-mode');
+                themeToggle.checked = true;
+            }
+        }
+
+        function saveThemePreference() {
+            if (body.classList.contains('light-mode')) {
+                localStorage.setItem('theme', 'light-mode');
+            } else {
+                localStorage.removeItem('theme');
+            }
+        }
+
+        themeToggle.addEventListener('change', () => {
+            body.classList.toggle('light-mode');
+            saveThemePreference();
+        });
+
+        document.addEventListener('DOMContentLoaded', applySavedTheme);
+    </script>
+</body>
+</html>

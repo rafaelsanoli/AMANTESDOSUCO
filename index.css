@@ -1,0 +1,157 @@
+/* --- ESTRUTURA, LAYOUT E RESPONSIVIDADE --- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- CABEÇALHO E NAVEGAÇÃO --- */
+.main-header {
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center; /* Alinha o menu e o switcher */
+}
+
+.main-nav ul li {
+    margin-left: 30px;
+}
+
+.nav-dropdown {
+    display: none; 
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    min-width: 160px;
+    z-index: 1;
+}
+
+.nav-dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* --- BOTÕES --- */
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+}
+
+/* --- SEÇÕES --- */
+.hero-section {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.content-section {
+    padding: 80px 0;
+}
+
+/* --- CARDS DE PLANOS --- */
+.plan-cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.plan-card {
+    padding: 40px 30px;
+    text-align: center;
+}
+
+.plan-card ul {
+    list-style: none;
+    margin: 30px 0;
+}
+
+.plan-card ul li {
+    padding: 10px 0;
+}
+
+/* --- MODALIDADES --- */
+.modalities-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    text-align: left;
+}
+
+.modality-item {
+    padding: 30px;
+}
+
+/* --- FORMULÁRIO DE CONTATO --- */
+.contact-form {
+    max-width: 600px;
+    margin: 40px auto 0;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+/* --- RODAPÉ --- */
+.main-footer {
+    padding: 30px 0;
+    text-align: center;
+}
+
+/* --- RESPONSIVIDADE --- */
+@media(max-width: 768px) {
+    h1 { font-size: 3rem; }
+    h2 { font-size: 2.2rem; }
+
+    .main-nav ul { display: none; }
+    .nav-dropdown { display: block; }
+    
+    .plan-card.featured { transform: scale(1); }
+    .plan-card.featured:hover { transform: scale(1.02) translateY(-5px); }
+    
+    .modalities-grid { grid-template-columns: 1fr; }
+}

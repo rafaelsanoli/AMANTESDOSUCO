@@ -4,16 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <meta name="description" content="Academia AmantesDoSuco em Brasília. Foco em Bodybuilding e Powerlifting raiz. Ambiente hardcore, equipamentos de peso e treinos sérios.">
-    <meta name="keywords" content="academia, bodybuilding, powerlifting, musculação, hardcore, Brasília">
+    <meta name="description" content="Academia AmantesDoSuco em Valparaíso de Goiás. Foco em Bodybuilding e Powerlifting raiz. Ambiente hardcore, equipamentos de peso e treinos sérios.">
+    <meta name="keywords" content="academia, bodybuilding, powerlifting, musculação, hardcore, Valparaíso de Goiás">
     
-    <title>Academia AmantesDoSuco - Bodybuilding Raiz em Brasília</title>
+    <title>Academia AmantesDoSuco - Bodybuilding Raiz</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&family=Bebas+Neue&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="estilizacao.css">
 </head>
 <body>
 
@@ -26,13 +27,14 @@
                     <li><a href="#planos">Planos</a></li>
                     <li><a href="#modalidades">Modalidades</a></li>
                     <li><a href="#contato">Contato</a></li>
+                    <li>
+                        <div class="theme-switcher">
+                            <input type="checkbox" id="theme-toggle">
+                            <label for="theme-toggle" class="slider"></label>
+                        </div> 
+                    </li>
                 </ul>
-
-                <div class="theme-switcher">
-                    <input type="checkbox" id="theme-toggle">
-                    <label for="theme-toggle" class="slider"></label>
-                </div>  
-
+                  
                 <div class="nav-dropdown">
                     <button class="dropdown-btn">Menu</button>
                     <div class="dropdown-content">
@@ -157,13 +159,8 @@
     <footer class="main-footer">
         <div class="container">
             <p>&copy; 2025 Academia AmantesDoSuco. Todos os pesos reservados.</p>
-            <p>Feito para monstros, por monstros.</p>
+            <p>Feito para monstros, por monstros. | <a href="autor/autor.html">Sobre o Autor</a></p>
         </div>
-    </footer>
-
-
-    <footer class="main-footer">
-        ...
     </footer>
 
     <script>
@@ -174,36 +171,29 @@
         // 2. Função para aplicar o tema salvo
         function applySavedTheme() {
             const savedTheme = localStorage.getItem('theme');
-            // Se encontrou um tema salvo E ele é 'light-mode'...
             if (savedTheme === 'light-mode') {
                 body.classList.add('light-mode');
-                themeToggle.checked = true; // Marca o checkbox como ativo
+                themeToggle.checked = true;
             }
         }
 
         // 3. Função para salvar o tema
         function saveThemePreference() {
-            // Verifica se o body tem a classe 'light-mode'
             if (body.classList.contains('light-mode')) {
                 localStorage.setItem('theme', 'light-mode');
             } else {
-                localStorage.removeItem('theme'); // Remove para voltar ao padrão (dark)
+                localStorage.removeItem('theme');
             }
         }
 
         // 4. Adicionar o "ouvinte" de evento para o clique no botão
         themeToggle.addEventListener('change', () => {
-            // A função toggle adiciona a classe se não existir, e remove se existir.
             body.classList.toggle('light-mode');
-            // Salva a nova preferência do usuário
             saveThemePreference();
         });
 
         // 5. Executar a função para aplicar o tema quando a página carregar
         document.addEventListener('DOMContentLoaded', applySavedTheme);
     </script>
-</body>
-
-</html>
 </body>
 </html>
